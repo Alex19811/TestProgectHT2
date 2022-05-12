@@ -44,9 +44,8 @@ public class AvicTests {
         driver.findElement(By.xpath("//span[@class='sidebar-item']")).click();
         driver.findElement(By.xpath("//span[contains(text(),'Ноутбуки та планшети')]")).click();
         driver.findElement(By.xpath("//div[@class='brand-box__title']//a[contains(text(),'Електронні книги')]")).click();
-        List<WebElement> elementList = driver.findElements(By.xpath("//div[@class='page-title page-title-category']"));
-        for (WebElement webElement : elementList)
-            Assert.assertTrue(webElement.getText().contains("Електронні книги"));
+        WebElement title = driver.findElement(By.xpath("//div[@class='page-title page-title-category']"));
+        Assert.assertTrue(title.getText().contains("Електронні книги"));
     }
 
     @Test(priority = 3)
